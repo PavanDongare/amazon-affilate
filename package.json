@@ -18,6 +18,7 @@
   "homepage": "https://github.com/PavanDongare/amazon-affilate#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
     "puppeteer": "^10.0.0"
   }
 }
