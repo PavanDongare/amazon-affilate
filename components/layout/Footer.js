@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <div>
+        <div className='bg-blue-900'>
             footer
         </div>
     )
