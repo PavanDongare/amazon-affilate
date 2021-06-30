@@ -28,7 +28,7 @@ export default function IndexPage() {
   // }
 
   return (
-    <div>
+    <div className='m-0 p-0'>
       <Search></Search>
     </div>
   )

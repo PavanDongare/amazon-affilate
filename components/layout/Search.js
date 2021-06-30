@@ -17,15 +17,15 @@ function Search(props) {
     }, [value])
 
     return (
-        <div>
-            <input className="rounded-full  p-5 w-full text-gray-700 leading-tight focus:outline-none "
+
+            <input className="rounded-full m-5 p-5 w-full text-gray-700 leading-tight focus:outline-none "
                 id="search" type="text" placeholder="search"
                 name="search"
                 value={search}
                 onChange={(e) => { onChange(e) }}
             >
             </input>
-        </div>
+     
     )
 }
 
