@@ -4,18 +4,16 @@ import Image from 'next/image'
 
 function Header() {
     return (
-        <div className="bg-gray-800 flex items-center p-2  shadow-xl">
 
-
-            <Image 
-                src="/download.png" 
+        <div className="bg-gray-800 p-5 shadow-xl">
+            <div className='text-white text-2xl'>
+            <Image
+                src="/download.png"
                 layout='fixed'
-                height ={50}
-                width = {120}
-            />
-
-            <div className='text-white m-5 text-lg'>Search Best Sellling producs</div>
-
+                height={120}
+                width={220}
+            /> 
+              Best-Sellers! Because you deserve only BEST ! </div>
             <input className="rounded-full  p-5 w-full text-gray-700 leading-tight focus:outline"
                 id="search" type="text" placeholder="search"
                 name="search"
@@ -24,6 +22,8 @@ function Header() {
             >
             </input>
         </div>
+
+
     )
 }
 
