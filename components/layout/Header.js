@@ -2,24 +2,18 @@ import Image from 'next/image'
 
 
 
-function Header() {
+function Header(props) {
     return (
-        <div className=" fixed w-full bg-blue-900 p-5 shadow-xl">
-            <div className='text-gray-600 text-2xl'>
-            <Image
-                src="/amazon.png"
-                layout='fixed'
-                height={50}
-                width={160}
-            /> 
-              Best-Sellers! Because you deserve only BEST ! </div>
-            <input className="rounded-full  p-5 w-full text-gray-700 leading-tight "
-                id="search" type="text" placeholder="search"
-                name="search"
-                value={''}
-                onChange={() => { }}
-            >
-            </input>
+        <div className="flex flex-row space-x-10 justify-center bg-blue-900 p-5 ">
+    
+                <Image
+                    src="/amazon.png"
+                    height={50}
+                    width={160}
+                />
+                <div className='text-white font-extrabold	 text-2xl'> Best-Sellers! </div>
+
+            <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
         </div>
 
 

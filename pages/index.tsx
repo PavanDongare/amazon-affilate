@@ -1,5 +1,5 @@
 import Skeleton from 'react-loading-skeleton'
-
+import Search from '@/components/layout/Search'
 import Nav from '@/components/nav'
 import Container from '@/components/container'
 import Entries from '@/components/entries'
@@ -29,9 +29,7 @@ export default function IndexPage() {
 
   return (
     <div>
-      <Container>
-        check
-      </Container>
+      <Search></Search>
     </div>
   )
 }
