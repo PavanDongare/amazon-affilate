@@ -25,69 +25,48 @@ const db = mysql({
 async function query(q) {
   try {
     const results = await db.query(q)
-    await db.end()
+    await db.end();
     return results
   } catch (e) {
-    console.log(q);
-    throw Error(q);
+    console.log(JSON.stringify(e));
+  }
+}
+async function insertDb(){
+  for (let index = 0; index < products.length; index++) {
+    const p = products[index];
+    let q = `INSERT INTO product (category,id,name,url,thumbnail,categoryurl) VALUES (${db.escape(p.category)},${p.ID},${db.escape(p.name)},${db.escape(p.url)},'${p.thumbnail}','${p.categoryUrl}')`
+    await query(q);
   }
 }
 
 // Create "entries" table if doesn't exist
 async function migrate() {
   try {
-    await query(`
-    CREATE TABLE IF NOT EXISTS entries (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      title TEXT NOT NULL,
-      content TEXT NOT NULL,
-      created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      updated_at 
-        TIMESTAMP 
-        NOT NULL 
-        DEFAULT CURRENT_TIMESTAMP 
-        ON UPDATE CURRENT_TIMESTAMP
-    )
-    `)
+    console.log('db creating table');
 
     await query(`
-    CREATE TABLE IF NOT EXISTS products (
+    CREATE TABLE IF NOT EXISTS product (
       productid INT AUTO_INCREMENT PRIMARY KEY,
       name TEXT DEFAULT NULL,
       category TEXT DEFAULT NULL,
       categoryurl TEXT DEFAULT NULL,
       id INT DEFAULT NULL,
-      url TEXT NOT NULL,
+      url TEXT NOT NULL UNIQUE,
       thumbnail TEXT DEFAULT NULL,
-      besturl  TEXT DEFAULT NULL,
-
       updated_at 
         TIMESTAMP 
         NOT NULL 
         DEFAULT CURRENT_TIMESTAMP 
         ON UPDATE CURRENT_TIMESTAMP
-    )
+    )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
     `)
-    var q = `INSERT INTO products (category,id,name,url,thumbnail,categoryurl) VALUES \n`
-    await products.forEach((p)=>{
-      q += `(${db.escape(p.category)},${p.ID},${db.escape(p.name)},${db.escape(p.url)},'${p.thumbnail}','${p.categoryUrl}')  ,\n`
-  
-    });
-
-    q = q.substr(0,q.length-2);
-    q += ';';
-
-    await fs.writeFileSync('page.sql',q);
 
 
-
-
-
+    await insertDb();
 
     console.log('migration ran successfully')
   } catch (e) {
-    console.error('could not run migration, double check your credentials.')
-    process.exit(1)
+    console.log(JSON.stringify(e));
   }
 }
 
