@@ -14,8 +14,6 @@ function Header(props) {
                     Best-Sellers
                 <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
                  </div>
-
-                
         </div>
 
 
