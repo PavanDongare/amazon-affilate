@@ -4,27 +4,32 @@ import { Fragment, useState, useEffect } from 'react';
 
 
 function Search(props) {
-    const [searchObj, setsearch] = useState({ 'search': '' });
+    const [searchObj, setsearch] = useState('');
 
-    const [value] = useDebounce(searchObj, 1000);
-    var { search } = searchObj;
+    const [value] = useDebounce(searchObj, 500);
+
     const onChange = e => {
-        setsearch({ ...searchObj, [e.target.name]: e.target.value });
+        setsearch(e.target.value);
     }
     useEffect(() => {
-        if (searchObj.search)
-            props.onChange(searchObj);
+        // if (searchObj.search)
+        //     props.onChange(searchObj);
     }, [value])
 
     return (
-
+        <Fragment>
+            {  JSON.stringify(value) }
             <input className="rounded-full m-3 p-5 w-3/4 text-gray-700 justify-between  focus:outline-none "
                 id="search" type="text" placeholder="search"
                 name="search"
-                value={search}
+                value={searchObj}
                 onChange={(e) => { onChange(e) }}
             >
             </input>
+
+        </Fragment>
+
+
      
     )
 }
