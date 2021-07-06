@@ -28,11 +28,13 @@ async function query(q) {
     await db.end();
     return results
   } catch (e) {
-    console.log(JSON.stringify(e));
+    //console.log(JSON.stringify(e));
   }
 }
 async function insertDb(){
-  for (let index = 0; index < products.length; index++) {
+  for (let index = 0	; index < products.length; index++) {
+    if(index%1000 ===0) 
+       console.log(index);
     const p = products[index];
     let q = `INSERT INTO product (category,id,name,url,thumbnail,categoryurl) VALUES (${db.escape(p.category)},${p.ID},${db.escape(p.name)},${db.escape(p.url)},'${p.thumbnail}','${p.categoryUrl}')`
     await query(q);
@@ -64,9 +66,9 @@ async function migrate() {
 
     await insertDb();
 
-    console.log('migration ran successfully')
+   console.log('migration ran successfully')
   } catch (e) {
-    console.log(JSON.stringify(e));
+   // console.log(JSON.stringify(e));
   }
 }
 
