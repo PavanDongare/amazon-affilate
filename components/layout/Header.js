@@ -10,10 +10,10 @@ function Header(props) {
                     height={100}
                     width={200}
                 />
-                <div className='text-yellow-600 font-extrabold	px-10 text-3xl'>            
-                    Best-Sellers
-                <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
-                 </div>
+                <div className='text-white font-extrabold	px-10 text-3xl'>            
+                    Best Sellers
+                    <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
+                </div>
         </div>
 
 

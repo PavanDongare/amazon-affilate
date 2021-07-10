@@ -3,7 +3,7 @@ import Search from '@/components/Search'
 import CardList from '@/components/CardList'
 import ProductSearch from '@/components/ProductSearch'
 
-import { useEntries } from '@/lib/swr-hooks'
+import { useEntries } from '@/lib/data-hooks'
 
 export default function IndexPage() {
   // const { entries, isLoading } = useEntries()

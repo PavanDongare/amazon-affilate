@@ -1,6 +1,6 @@
 import Search from './Search';
 import CardList from './CardList';
-import  useSearch from '../lib/swr-hooks'
+import  useSearch from '../lib/data-hooks'
 
 function ProductSearch() {
     const search = (searchText: string) => {

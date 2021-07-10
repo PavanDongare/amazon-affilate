@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useDebounce } from 'use-debounce';
 import { Fragment, useState, useEffect } from 'react';
-import { useSearch } from '../lib/swr-hooks'
+import { useSearch } from '../lib/data-hooks'
 
 
 function Search(props) {

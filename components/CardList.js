@@ -1,4 +1,4 @@
-import {useSearch} from '../lib/swr-hooks'
+import {useSearch} from '../lib/data-hooks'
 function CardList() {
    
     return (
