@@ -24,9 +24,9 @@ function CardList() {
             </div>
             }
             
-            {(!data ) && <Image src="/trans.png" layout="fill"  /> }
+            {(!data ) && <Image src="/trans.png" layout="responsive" height='100' width='200' /> }
            
-            { data && Object.keys(data).length === 0 && <Image src="/noproduct.png" layout="fill"  />  }
+            { data && Object.keys(data).length === 0 && <Image src="/noproduct.png" layout="responsive" height='100' width='200'  />  }
        
             {
                 data && Object.keys(data).map((e, i) => {
