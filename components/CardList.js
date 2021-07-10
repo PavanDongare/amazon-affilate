@@ -31,7 +31,6 @@ function CardList() {
                                             ></Image>
                                         </div>
                                         <div>  {x.name} </div>
-                                        <div> {x.category} </div>
                                     </div>
                                 </div>)
                             })}
