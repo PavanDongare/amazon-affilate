@@ -11,7 +11,7 @@ function CardList() {
             {data && data.map((x) => {
                 return (
                     <Card>
-                        <div className='flex flex-col w-40'
+                        <div className='flex flex-col w-40 p-2'
                              key={x.name}
                              
                         >
