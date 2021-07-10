@@ -8,7 +8,7 @@ import Skeleton from 'react-loading-skeleton'
 
 
 function CardList() {
-    const { data, isLoading,isIdle,isSuccess, isFetching } = useProducts();
+    const { data, isFetching } = useProducts();
 
     return (
         <Fragment>
