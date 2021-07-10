@@ -1,19 +1,19 @@
-import useSWR from 'swr'
+import React from 'react'
+import axios from 'axios'
 
-function fetcher(url: string) {
-  return window.fetch(url).then((res) => res.json())
-}
 
-export function useEntries() {
-  const { data, error } = useSWR(`/api/get-entries`, fetcher)
-
-  return {
-    entries: data,
-    isLoading: !error && !data,
-    isError: error,
-  }
-}
-
-export function useEntry(id: string) {
-  return useSWR(`/api/get-entry?id=${id}`, fetcher)
+export default function useSearch() {
+  const [state, setState] = React.useReducer((_, action) => action, {
+    isIdle: true,
+  })
+  const mutate = React.useCallback(async (values) => {
+    setState({ isLoading: true })
+    try {
+      const data = axios.get(`/api/search-products?searchText`, values).then((res) => res.data)
+      setState({ isSuccess: true, data })
+    } catch (error) {
+      setState({ isError: true, error })
+    }
+  }, [])
+  return [mutate, state]
 }

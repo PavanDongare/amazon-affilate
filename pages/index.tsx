@@ -1,8 +1,7 @@
 import Skeleton from 'react-loading-skeleton'
-import Search from '@/components/layout/Search'
-import Nav from '@/components/nav'
-import Container from '@/components/container'
-import Entries from '@/components/entries'
+import Search from '@/components/Search'
+import CardList from '@/components/CardList'
+import ProductSearch from '@/components/ProductSearch'
 
 import { useEntries } from '@/lib/swr-hooks'
 
@@ -28,8 +27,8 @@ export default function IndexPage() {
   // }
 
   return (
-    <div className=''>
-      <Search></Search>
+    <div>
+      <ProductSearch></ProductSearch>
     </div>
   )
 }

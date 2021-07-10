@@ -1,5 +1,4 @@
 import '../styles/index.css'
-import Footer from '@/components/footer'
 import Head from 'next/head';
 
 import { Layout } from '@/components/layout/Layout';

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useDebounce } from 'use-debounce';
 import { Fragment, useState, useEffect } from 'react';
+import { useSearch } from '../lib/swr-hooks'
 
 
 function Search(props) {
@@ -12,13 +13,12 @@ function Search(props) {
         setsearch(e.target.value);
     }
     useEffect(() => {
-        // if (searchObj.search)
-        //     props.onChange(searchObj);
+        props.search(value);
     }, [value])
 
     return (
         <Fragment>
-            {  JSON.stringify(value) }
+            {/* {  JSON.stringify(value) } */}
             <input className="rounded-full m-3 p-5 w-3/4 text-gray-700 justify-between  focus:outline-none "
                 id="search" type="text" placeholder="search"
                 name="search"
