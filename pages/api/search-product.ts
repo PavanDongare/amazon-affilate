@@ -8,14 +8,14 @@ const handler: NextApiHandler = async (req, res) => {
     if (!searchText) {
       return res.status(400).json({ message: 'search text required' })
     }
-
-    var pageNumber = pageNo ? parseInt(pageNo.toString(),10)*40 : 0 ;
-    let startingPage = pageNumber * 40 ;
+    const productsPerPage = 100;
+    var pageNumber = pageNo ? parseInt(pageNo.toString(),10)*productsPerPage : 0 ;
+    let startingPage = pageNumber * productsPerPage ;
 
     
     const results = await query(
       `
-      SELECT * FROM product WHERE name LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,40 
+      SELECT * FROM product WHERE name LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,${productsPerPage} 
     `,startingPage
     )
 
