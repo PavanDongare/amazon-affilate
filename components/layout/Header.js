@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Search from '../Search'
 import Link from 'next/link'
+import router from 'next/router'
 
 
 
 function Header(props) {
+  
     return (
         <div className="sticky top-0 z-50 flex flex-col sm:flex-row   bg-blue-900 p-2 ">
             <Link href="/">
@@ -14,6 +16,7 @@ function Header(props) {
                  
                     height={10}
                     width={120}
+                    onClick={() => router.reload()}
                 />
     
 
