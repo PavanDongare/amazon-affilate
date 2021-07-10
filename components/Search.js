@@ -19,7 +19,7 @@ function Search(props) {
     return (
         <Fragment>
             {/* {  JSON.stringify(value) } */}
-            <input className="rounded-full m-3 p-5 w-3/4 text-gray-700 justify-between  focus:outline-none "
+            <input className="rounded-full m-3 p-5  w-3/4 text-gray-700 justify-between  focus:outline-none "
                 id="search" type="text" placeholder="search"
                 name="search"
                 value={searchObj}

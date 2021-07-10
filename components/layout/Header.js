@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ProductSearch from '../ProductSearch'
 
 
 
@@ -14,6 +15,10 @@ function Header(props) {
                     Best Sellers
                     <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
                 </div>
+                <div className='flex-grow'>
+                    <ProductSearch></ProductSearch>
+                </div>
+               
         </div>
 
 
