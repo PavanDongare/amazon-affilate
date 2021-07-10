@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import ProductSearch from '../ProductSearch'
 import Search from '../Search'
 
 

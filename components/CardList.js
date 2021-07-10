@@ -1,35 +1,35 @@
-import { useProducts } from '../lib/data-hooks'
+import { useProducts, useProductsGroupedByCat } from '../lib/data-hooks'
 import Card from './ui/Card';
 import Image from 'next/image'
+import { Fragment } from 'react';
 
 
 function CardList() {
     const { data, isLoading } = useProducts();
+    
     return (
-
-        <div className='flex flex-wrap'>
-            {data && data.map((x) => {
-                return (
-                    <Card>
-                        <div className='flex flex-col w-40 p-2'
-                             key={x.name}
-                             
-                        >
-                            <div>
-                            <Image
-                                src={x.thumbnail}
-                                height={150}
-                                width={150}
-                            ></Image>
-                            </div>
-                          <div>  {x.name} </div>
-                          <div> {x.category} </div>
-                            
-                        </div>
-                    </Card>)
-            })}
-        </div>
+        <Fragment>
+             {
+                data &&  Object.keys(data).map((e,i)=>{ return(
+                    <div>
+                        {e}
+                        <br></br>
+                        {JSON.stringify(data[e])}
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                    </div>)
+            
+                })
+             }
+        </Fragment>
     )
 }
+ 
+         
+     
+    
+
 
 export default CardList
