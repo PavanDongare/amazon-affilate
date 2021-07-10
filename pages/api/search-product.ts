@@ -14,7 +14,7 @@ const handler: NextApiHandler = async (req, res) => {
     
     const results = await query(
       `
-      SELECT * FROM product WHERE name LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,${productsPerPage} 
+      SELECT * FROM product WHERE name LIKE '%${searchText}%' Or Category LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,${productsPerPage} 
     `,startingPage
     )
 
