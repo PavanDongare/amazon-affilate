@@ -10,7 +10,8 @@ function Search(props) {
     const { data :Products , refetch:refetchProduct } = useProducts(searchStr);
 
     const onChange = e => {
-        setsearch(e.target.value);
+        const str = e.target.value.trim() 
+        setsearch(str);
     }
     useEffect(() => {
         if(searchStr)
