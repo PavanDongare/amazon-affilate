@@ -8,7 +8,7 @@ import Skeleton from 'react-loading-skeleton'
 
 
 function CardList() {
-    const { data, isLoading, isFetching } = useProducts();
+    const { data, isLoading,isIdle,isSuccess, isFetching } = useProducts();
 
     return (
         <Fragment>
@@ -23,23 +23,11 @@ function CardList() {
                 <Skeleton height={48} />
             </div>
             }
-          
-          <Image src="/trans.png" layout="fill"  />
-
-
-             {/* <Image className=' pl-100 ml-100'
-                 src="/trans.png"
-
-                 height={500}
-                 width={1000}
-             />
-                  */}
-                  
-      
-
-
-         
+            
+            {(!data ) && <Image src="/trans.png" layout="fill"  /> }
            
+            { data && Object.keys(data).length === 0 && <Image src="/noproduct.png" layout="fill"  />  }
+       
             {
                 data && Object.keys(data).map((e, i) => {
                     return (

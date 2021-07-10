@@ -5,7 +5,6 @@ export default function IndexPage() {
   
   return (
     <div>
-          
         <CardList></CardList>
     </div>
   )

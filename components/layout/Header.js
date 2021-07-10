@@ -1,17 +1,25 @@
 import Image from 'next/image'
 import Search from '../Search'
+import Link from 'next/link'
 
 
 
 function Header(props) {
     return (
         <div className="sticky top-0 z-50 flex flex-col sm:flex-row   bg-blue-900 p-2 ">
-                <Image className='rounded-lg'
+            <Link href="/">
+         
+            <Image className='rounded-lg cursor-pointer'
                     src="/amazon.png"
                  
                     height={10}
                     width={120}
                 />
+    
+
+            
+            </Link>
+                
                     <div className='flex-grow'>
                     <Search></Search>
                 </div>
