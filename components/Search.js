@@ -1,19 +1,19 @@
 import Image from 'next/image'
 import { useDebounce } from 'use-debounce';
 import { Fragment, useState, useEffect } from 'react';
-import { useSearch } from '../lib/data-hooks'
+import { useProducts, useSearch } from '../lib/data-hooks'
 
 
 function Search(props) {
-    const [searchObj, setsearch] = useState('');
-
-    const [value] = useDebounce(searchObj, 500);
+    const [searchStr, setsearch] = useState('');
+    const [value] = useDebounce(searchStr, 1000);
+    const { data , refetch } = useProducts(searchStr);
 
     const onChange = e => {
         setsearch(e.target.value);
     }
     useEffect(() => {
-        props.search(value);
+        refetch();
     }, [value])
 
     return (
@@ -22,7 +22,7 @@ function Search(props) {
             <input className="rounded-full m-3 p-5  w-3/4 text-gray-700 justify-between  focus:outline-none "
                 id="search" type="text" placeholder="search"
                 name="search"
-                value={searchObj}
+                value={searchStr}
                 onChange={(e) => { onChange(e) }}
             >
             </input>

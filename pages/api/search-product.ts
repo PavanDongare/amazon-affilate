@@ -2,6 +2,7 @@ import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 
 const handler: NextApiHandler = async (req, res) => {
+  console.log(req);
   let { searchText , pageNo } = req.query
   try {
     if (!searchText) {
@@ -14,7 +15,7 @@ const handler: NextApiHandler = async (req, res) => {
     
     const results = await query(
       `
-      SELECT * FROM products WHERE prodcut.name LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,40 
+      SELECT * FROM product WHERE name LIKE '%${searchText}%' ORDER BY ID ASC LIMIT ?,40 
     `,startingPage
     )
 
