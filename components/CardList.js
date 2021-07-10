@@ -7,23 +7,25 @@ function CardList() {
     const { data, isLoading } = useProducts();
     return (
 
-        <div>
+        <div className='flex flex-wrap'>
             {data && data.map((x) => {
                 return (
                     <Card>
-                        <div className='flex flex-col '>
+                        <div className='flex flex-col w-40'
+                             key={x.name}
+                             
+                        >
                             <div>
                             <Image
                                 src={x.thumbnail}
-                                height={100}
-                                width={100}
+                                height={150}
+                                width={150}
                             ></Image>
                             </div>
                           <div>  {x.name} </div>
                           <div> {x.category} </div>
                             
                         </div>
-
                     </Card>)
             })}
         </div>
