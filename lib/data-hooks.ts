@@ -17,6 +17,7 @@ const fetchPosts = (searchText) => axios.get('/api/search-product',{ params:{'se
 
 
 export function useProducts(searchText:string) {
+  if(searchText) searchText = searchText.trim();
   return useQuery('products', ()=> fetchPosts(searchText),
   { // rq options
     enabled:false, // to avoid default fetch

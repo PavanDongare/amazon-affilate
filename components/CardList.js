@@ -12,8 +12,8 @@ function CardList() {
 
     return (
         <Fragment>
-            {isFetching && <div>
-                <Skeleton width={180} height={24} />
+            {isFetching && <Card> <div>
+                <Skeleton width={280} height={24}/>
                 <Skeleton height={48} />
                 <div className="my-4" />
                 <Skeleton width={180} height={24} />
@@ -21,7 +21,7 @@ function CardList() {
                 <div className="my-4" />
                 <Skeleton width={180} height={24} />
                 <Skeleton height={48} />
-            </div>
+            </div> </Card>
             }
             
             {(!data ) && <Image src="/trans.png" layout="responsive" height='100' width='200' /> }
