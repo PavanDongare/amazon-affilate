@@ -1,6 +1,6 @@
 import Search from './Search';
 import CardList from './CardList';
-import  useSearch from '../lib/data-hooks'
+
 
 function ProductSearch() {
     const search = (searchText: string) => {
@@ -9,7 +9,7 @@ function ProductSearch() {
     return (
         <div>  
             <Search search={search}></Search>
-            <CardList></CardList>
+    
         </div>
     )
 }

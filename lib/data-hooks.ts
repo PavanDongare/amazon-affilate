@@ -1,4 +1,3 @@
-import React from 'react'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 
@@ -11,5 +10,6 @@ export function useProducts(searchText:string) {
   { // rq options
     enabled:false, // to avoid default fetch
     refetchOnWindowFocus: false,
+    staleTime:Infinity
   })
 }

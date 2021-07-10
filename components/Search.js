@@ -13,7 +13,8 @@ function Search(props) {
         setsearch(e.target.value);
     }
     useEffect(() => {
-        refetch();
+        if(searchStr)
+            refetch();
     }, [value])
 
     return (

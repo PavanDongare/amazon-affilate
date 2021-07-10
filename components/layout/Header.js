@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ProductSearch from '../ProductSearch'
+import Search from '../Search'
 
 
 
@@ -16,7 +17,7 @@ function Header(props) {
                     <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
                 </div>
                 <div className='flex-grow'>
-                    <ProductSearch></ProductSearch>
+                    <Search></Search>
                 </div>
                
         </div>
