@@ -5,8 +5,10 @@ import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton'
 
 
+
+
 function CardList() {
-    const { data, isLoading,isFetching } = useProducts();
+    const { data, isLoading, isFetching } = useProducts();
 
     return (
         <Fragment>
@@ -20,9 +22,24 @@ function CardList() {
                 <Skeleton width={180} height={24} />
                 <Skeleton height={48} />
             </div>
-
-
             }
+            { !data || isFetching && 
+             <div
+             style={{
+                 display: "flex",
+                 justifyContent: "center",
+             }}
+         >
+             <Image className=' pl-100 ml-100'
+                 src="/trans.png"
+
+                 height={500}
+                 width={1000}
+             />
+
+         </div>
+         }
+           
             {
                 data && Object.keys(data).map((e, i) => {
                     return (
