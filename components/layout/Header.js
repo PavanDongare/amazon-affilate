@@ -27,18 +27,28 @@ function Header(props) {
                     <Search></Search>
                 </div>
               
-                <div className='text-white font-extrabold	px-10 text-3xl'>            
+                <div className=' text-white font-extrabold	px-10 text-3xl '>            
                     Best Sellers
                     <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
                 </div>
             
-                <Image className='rounded-lg'
+                {/* <Image className='rounded-lg'
                     src="/usa.jpg"
         
                     height={10}
                     width={120}
-                />
+                    onClick={() => router.reload()}
+                /> */}
+                <a target="_blank"  href="https://www.amazon.com/" rel="noopener noreferrer">
+                    <div> <Image className=' sm:hidden'
+                    src="/usa.jpg"
+                    height={20}
+                    width={40}
+                   
+                /></div>
                
+                </a>
+      
         </div>
 
 
