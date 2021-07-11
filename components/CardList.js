@@ -53,9 +53,11 @@ function CardList() {
                                                         src={x.thumbnail}
                                                         height={150}
                                                         width={150}
-                                                    ></Image> </a>      
+                                                    ></Image>
+                                                     <div>  {x.name} </div>
+                                                     </a>      
                                                 </div>
-                                                <div>  {x.name} </div>
+                                               
                                             </div>
                                         </div>)
                                     })}
