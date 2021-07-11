@@ -43,7 +43,7 @@ function CardList() {
                                             <div className='flex flex-col w-40 p-2' key={x.name}>
                                                 <div>
                                                     <a  
-                                                        href={x.url+'?tag='}
+                                                        href={x.url+'&tag=onlybest0b-20'}
                                                         target='_blank'
                                                         > <Image
                                                         src={x.thumbnail}

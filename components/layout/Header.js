@@ -33,7 +33,7 @@ function Header(props) {
             </div>
 
             <a
-                    href="https://www.amazon.com/"
+                    href="https://www.amazon.com?tag=onlybest0b-20"
                     target='_blank'
                 > <Image
                     src="/usa.jpg"
