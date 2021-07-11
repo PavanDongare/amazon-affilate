@@ -7,7 +7,7 @@ const handler: NextApiHandler = async (req, res) => {
     if (!searchText) {
       return res.status(400).json({ message: 'search text required' })
     }
-    const productsPerPage = 100;
+    const productsPerPage = 200;
     var pageNumber = pageNo ? parseInt(pageNo.toString(),10)*productsPerPage : 0 ;
     let startingPage = pageNumber * productsPerPage ;
 

@@ -2,7 +2,7 @@ import { useProducts, useProductsGroupedByCat } from '../lib/data-hooks'
 import Card from './ui/Card';
 import  LoaderSkeleton from './layout/LoaderSkeleton'
 import Image from 'next/image'
-import { Fragment } from 'react';
+import { Fragment,useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton'
 
 
@@ -11,9 +11,14 @@ import Skeleton from 'react-loading-skeleton'
 function CardList() {
     const { data, isFetching } = useProducts();
 
+    useEffect(() => {
+        window.scroll({
+            top: 1,
+          });  
+    }, [data])
     return (
         <Fragment>
-            {isFetching && <LoaderSkeleton></LoaderSkeleton>
+            {(isFetching )&& <LoaderSkeleton></LoaderSkeleton>
             }
             
             {(!data ) && <Image src="/trans.png" layout="responsive" height='100' width='200' /> }
