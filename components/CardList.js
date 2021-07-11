@@ -28,12 +28,16 @@ function CardList() {
                                 <div
                                     className='bg-blue-900
                                                  rounded-md 
-                                                text-white 
+                                                text-white
                                                 text-2xl 
                                                 w-full
                                                  h-10
                                                   px-10'>
-                                    {e}
+                                    <a   className='flex flex-row'
+                                        href={data[e][0].categoryurl+'&tag=onlybest0b-20'}
+                                        target='_blank'
+                                        > {e} 👈 <div className='text-yellow-400 font-semibold	'> check all latest </div>  </a>  
+
                                 </div>
                             </Card>
                             <Card>
@@ -49,8 +53,7 @@ function CardList() {
                                                         src={x.thumbnail}
                                                         height={150}
                                                         width={150}
-                                                    ></Image> </a>
-                                                    
+                                                    ></Image> </a>      
                                                 </div>
                                                 <div>  {x.name} </div>
                                             </div>
