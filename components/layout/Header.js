@@ -29,7 +29,7 @@ function Header(props) {
 
             <div className=' text-white font-extrabold	px-10 text-3xl '>
                 Best Sellers
-                <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
+                <div className='text-yellow-500 font-extrabold	 text-2xl'>You deserve the BEST !</div>
             </div>
 
             <a

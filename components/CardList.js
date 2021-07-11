@@ -36,7 +36,7 @@ function CardList() {
                                     <a   className='flex flex-row'
                                         href={data[e][0].categoryurl+'&tag=onlybest0b-20'}
                                         target='_blank'
-                                        > {e} 👈 <div className='text-yellow-400 font-semibold	'> check all latest </div>  </a>  
+                                        > {e}  <div className='text-yellow-400 font-semibold'>  👈  check all latest </div>  </a>  
 
                                 </div>
                             </Card>
