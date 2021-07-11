@@ -6,49 +6,41 @@ import router from 'next/router'
 
 
 function Header(props) {
-  
+
     return (
         <div className="sticky top-0 z-50 flex flex-col sm:flex-row   bg-blue-900 p-2 ">
             <Link href="/">
-         
-            <Image className='rounded-lg cursor-pointer'
+
+                <Image className='rounded-lg cursor-pointer'
                     src="/amazon.png"
-                 
+
                     height={10}
                     width={120}
                     onClick={() => router.reload()}
                 />
-    
 
-            
+
+
             </Link>
-                
-                    <div className='flex-grow'>
-                    <Search></Search>
-                </div>
-              
-                <div className=' text-white font-extrabold	px-10 text-3xl '>            
-                    Best Sellers
-                    <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
-                </div>
-            
-                {/* <Image className='rounded-lg'
+
+            <div className='flex-grow'>
+                <Search></Search>
+            </div>
+
+            <div className=' text-white font-extrabold	px-10 text-3xl '>
+                Best Sellers
+                <div className='text-yellow-600 font-extrabold	 text-2xl'>You deserve the BEST !</div>
+            </div>
+
+            <a
+                    href="https://www.amazon.com/"
+                    target='_blank'
+                > <Image
                     src="/usa.jpg"
-        
-                    height={10}
-                    width={120}
-                    onClick={() => router.reload()}
-                /> */}
-                <a target="_blank"  href="https://www.amazon.com/" rel="noopener noreferrer">
-                    <div> <Image className=' sm:hidden'
-                    src="/usa.jpg"
-                    height={20}
-                    width={40}
-                   
-                /></div>
-               
-                </a>
-      
+                    height={50}
+                    width={100}
+                ></Image> </a>
+
         </div>
 
 
