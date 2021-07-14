@@ -7,7 +7,7 @@ import { useProducts, useProductsGroupedByCat } from '../lib/data-hooks'
 function Search(props) {
     const [searchStr, setsearch] = useState('');
     const [value] = useDebounce(searchStr, 1000);
-    const { data :Products , refetch:refetchProduct } = useProducts(searchStr);
+    const { refetch:refetchProduct } = useProducts(searchStr);
 
     const onChange = e => {
         setsearch(e.target.value);

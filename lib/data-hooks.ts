@@ -6,6 +6,8 @@ import _ from 'lodash';
 const fetchPosts = (searchText) => axios.get('/api/search-product',{ params:{'searchText':searchText}}).then((res) => 
 {
   var products = res.data ;
+
+  // group json by common key - category
   var grouped = _.mapValues(_.groupBy(products, 'category'),
                           clist => clist.map(p => _.omit(p, 'category ')));
 

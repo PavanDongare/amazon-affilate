@@ -3,7 +3,7 @@ import Card from './ui/Card';
 import  LoaderSkeleton from './layout/LoaderSkeleton'
 import Image from 'next/image'
 import { Fragment,useEffect } from 'react';
-import Skeleton from 'react-loading-skeleton'
+
 
 
 
